@@ -5,7 +5,7 @@ import os
 name = input("Enter your name: ")
 
 # Create directory with user's name
-folder_path = f"/home/stanley/Documents/facerecognition/FR/{name}"
+folder_path = f"C:/Users/danie/Desktop/NTU/Modules/Year 4 Semester 2/Intelligence System/Assignment/facerecognition-main/facerecognition-main/FR/{name}"
 if not os.path.exists(folder_path):
     os.makedirs(folder_path)
 
@@ -13,7 +13,7 @@ if not os.path.exists(folder_path):
 cap = cv2.VideoCapture(0)
 
 # Load the Haar cascade classifier for face detection
-face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier('C:/Users/danie/Desktop/NTU/Modules/Year 4 Semester 2/Intelligence System/Assignment/facerecognition-main/facerecognition-main/haarcascade_frontalface_default.xml')
 
 # Define the number of images to capture
 num_images = 1000
@@ -34,7 +34,10 @@ while count < num_images:
     # Draw rectangles around detected faces
     for (x, y, w, h) in faces:
         # Draw a rectangle around the detected face
-        cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+        # cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+        # Draw a rectangle around the detected face (with fixed size)
+        fixed_w, fixed_h = 250, 300
+        cv2.rectangle(frame, (x, y), (x+fixed_w, y+fixed_h), (0, 255, 0), 2)
 
         # Save the face image to the directory with the user's name
         img_name = os.path.join(folder_path, str(count) + '.jpg')

@@ -26,7 +26,7 @@ datagen = ImageDataGenerator(rotation_range=20,
 # Define the path to the directory containing the images
 path = "/home/stanley/Documents/facerecognition/FR"
 
-labels = ['jk', 'stan', 'jack']
+labels = ['jack', 'jk', 'stan']
 
 # Load the images and labels into arrays
 images = []
